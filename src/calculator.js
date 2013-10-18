@@ -7,6 +7,9 @@ Up to 5,070				10%
 21,241 up to 40,230		33%
 Higher than 40,230		45%
 */
+// created by Benjamin Horsleben (github: fizker)
+
+
 var Calculator = (function(global) {
 	'use strict';
 	
@@ -42,7 +45,7 @@ var Calculator = (function(global) {
 				tax += remaining * overflow;
 			}
 			return tax;
-		};
+		}
 		
 		return {
 			calculateTax: calc

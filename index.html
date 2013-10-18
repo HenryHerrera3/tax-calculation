@@ -2,6 +2,47 @@
 <html>
 	<head>
 		<title>Tax calculator</title>
+        <script src="src/calculator.js"></script>
 	</head>
-	<body></body>
+	<body onload="taxCalcTest()">
+
+
+
+    <script>
+
+		function taxCalcTest() {
+		var data,
+            subject;
+            // turn data into function to select rates based on year and filing status.
+            data = {
+                rates: [
+                    {
+                        ceil: 5070, //taxable income ceiling
+                        tax: .1     //tax rate
+                    },
+                    {
+                        ceil: 8660,
+                        tax: .14
+                    },
+                    {
+                        ceil: 14070,
+                        tax: .23
+                    },
+                    {
+                        ceil: 21240,
+                        tax: .30
+                    },
+                    {
+                        ceil: 40230,
+                        tax: .33
+                    }
+                ],
+            overflow: .45
+			};
+			subject = new Calculator(data);
+            document.write(subject.calculateTax(50000));
+
+            }
+    </script>
+	</body>
 </html>
